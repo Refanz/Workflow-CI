@@ -1,0 +1,12 @@
+name: mushroom-mlflow
+
+conda_env: conda.yaml
+
+entry_points:
+    main:
+        parameters:
+            solver: {type: string, default: "liblinear"}
+            penalty: {type: string, default: "l1"}
+            C: {type: int, default: 10}
+            dataset: {type: string, default: "mushrooms_preprocessed.csv"}
+        command: "python modelling.py {solver} {penalty} {C} {dataset}"
