@@ -39,6 +39,10 @@ jobs:
       run: |
         mlflow run MLProject --env-manager=local
 
+    - name: Check mlruns dir
+      run: |
+        ls -R mlruns/
+
     - name: Save mlruns to repo
       run: |
         git config --global user.name ${{ secrets.name }}
